@@ -6,8 +6,9 @@
 [image2]: ./output_images/undistorted.png "Road Transformed"
 [image3]: ./output_images/thresholded.png "Binary Example"
 [image4]: ./output_images/perspectiveT.png "Warp Example"
-[image5]: ./output_images/polyfit.png "Fit Visual"
-[image6]: ./output_images/lanedetected.png "Output"
+[image5]: ./output_images/slidingwindow.png "Fit Visual"
+[image6]: ./output_images/polyfit.png "Fit Visual"
+[image7]: ./output_images/lanedetected.png "Output"
 [video1]: ./marked_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -52,19 +53,19 @@ Perspective transform is done in laneDetectPipeline using cv2.warpPerspective. R
 
 Lane-lines pixels are identified using modified Udacity provided function find_window_centroids in laneDetectPipeline. The modifications are done to add a list for y values of corresponding centroids
 
-fitPoly is done in laneDetectPipeline as well using np.polyfit.
+polyFit is done in laneDetectPipeline as well using np.polyfit.
 
 ![alt text][image5]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+In laneDetectPipeline using the Rcurve formula after fitting the polynomical on detected lane lines.
+
+![alt text][image6]
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-![alt text][image6]
+![alt text][image7]
 
 ---
 
