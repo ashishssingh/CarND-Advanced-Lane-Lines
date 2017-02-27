@@ -59,7 +59,7 @@ polyFit is done in laneDetectPipeline as well using np.polyfit.
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-In laneDetectPipeline using the Rcurve formula after fitting the polynomical on detected lane lines.
+In laneDetectPipeline using the Rcurve formula after fitting the polynomical on detected lane lines. And position of the vehicle by calculating offset of lane center from camera center.
 
 ![alt text][image6]
 
@@ -81,5 +81,6 @@ Here's a [link to my video result](./marked_video.mp4)
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+* Fails are generally observed in scenes with high contrast, like a sunny and shady area in the same frame, or light and dark road color.
+* Fails are also seen if a feature that is parallel and close to lanes is detected in a frame.
 
